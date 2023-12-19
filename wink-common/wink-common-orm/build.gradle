@@ -1,0 +1,10 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+dependencies {
+    api 'io.quarkus:quarkus-reactive-mysql-client'
+    api 'io.quarkus:quarkus-hibernate-validator'
+    api 'io.quarkus:quarkus-hibernate-reactive-panache'
+}

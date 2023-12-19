@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    plugins {
+        id 'io.quarkus' version "${quarkusPluginVersion}"
+    }
+}
+
+rootProject.name = 'wink-quarkus'
+
+include 'wink-common'
+include 'wink-common:wink-common-orm'
+findProject(':wink-upms:wink-common-orm')?.name = 'wink-common-orm'
+include 'wink-upms'
+include 'wink-upms:wink-upms-api'
+findProject(':wink-upms:wink-upms-api')?.name = 'wink-upms-api'
+include 'wink-upms:wink-upms-biz'
+findProject(':wink-upms:wink-upms-biz')?.name = 'wink-upms-biz'
+
