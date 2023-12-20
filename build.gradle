@@ -27,6 +27,10 @@ subprojects {
     dependencies {
         //implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
         implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+        implementation "org.projectlombok:lombok:${lombokVersion}"
+        implementation "cn.hutool:hutool-all:${hutoolVersion}"
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        annotationProcessor("io.quarkus:quarkus-panache-common:${quarkusPlatformVersion}")
     }
     java {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -35,14 +39,6 @@ subprojects {
 
     test {
         systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
-    }
-    compileJava {
-        options.encoding = 'UTF-8'
-        options.compilerArgs << '-parameters'
-    }
-
-    compileTestJava {
-        options.encoding = 'UTF-8'
     }
 
 }

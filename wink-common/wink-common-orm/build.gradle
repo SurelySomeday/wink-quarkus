@@ -4,7 +4,10 @@ plugins {
 }
 
 dependencies {
+    api "org.projectlombok:lombok"
+    api 'cn.hutool:hutool-all'
+    annotationProcessor 'org.projectlombok:lombok'
     api 'io.quarkus:quarkus-reactive-mysql-client'
-    api 'io.quarkus:quarkus-hibernate-validator'
     api 'io.quarkus:quarkus-hibernate-reactive-panache'
+    api 'jakarta.ws.rs:jakarta.ws.rs-api'
 }

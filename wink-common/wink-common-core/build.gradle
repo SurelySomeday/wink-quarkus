@@ -1,10 +1,11 @@
 plugins {
     id 'java'
+    id 'java-library'
 }
 
 dependencies {
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
-    annotationProcessor("io.quarkus:quarkus-panache-common")
-    implementation(project(":wink-common:wink-common-orm"))
+    implementation 'io.quarkus:quarkus-resteasy-reactive'
+
 }

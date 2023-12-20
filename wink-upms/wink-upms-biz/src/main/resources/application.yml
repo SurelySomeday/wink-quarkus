@@ -1,13 +1,17 @@
 greeting:
   message: "hello 22"
-mp:
-  messaging:
-    outgoing:
-      words-out:
-        topic: "words"
-    incoming:
-      words-in:
-        auto:
-          offset:
-            reset: "earliest"
-        topic: "words"
+
+quarkus:
+  datasource:
+    db-kind: mysql
+    username: root
+    password: 123456
+    reactive:
+      url: vertx-reactive:mysql://127.0.0.1:3307/demo?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+  hibernate-orm:
+    database:
+      generation: update
+    log:
+      sql: true
+    unsupported-properties:
+      "hibernate.hbm2ddl.default_constraint_mode": NO_CONSTRAINT

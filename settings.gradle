@@ -19,4 +19,6 @@ include 'wink-upms:wink-upms-api'
 findProject(':wink-upms:wink-upms-api')?.name = 'wink-upms-api'
 include 'wink-upms:wink-upms-biz'
 findProject(':wink-upms:wink-upms-biz')?.name = 'wink-upms-biz'
+include 'wink-common:wink-common-core'
+findProject(':wink-common:wink-common-core')?.name = 'wink-common-core'
 
