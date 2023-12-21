@@ -4,7 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor 'org.projectlombok:lombok'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
     implementation 'io.quarkus:quarkus-resteasy-reactive'
 

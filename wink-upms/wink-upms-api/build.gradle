@@ -1,9 +1,7 @@
-plugins {
-    id 'java'
-}
 
 dependencies {
-    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor 'org.projectlombok:lombok'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
     annotationProcessor("io.quarkus:quarkus-panache-common")
     implementation(project(":wink-common:wink-common-orm"))

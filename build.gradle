@@ -1,44 +1,40 @@
-plugins {
-    id 'java'
-}
+apply plugin: 'java'
 
-repositories {
-    mavenCentral()
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
+jar.enabled=false
 
 allprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'java'
+
     group = 'top.yxlgx'
     version = '1.0-SNAPSHOT'
 }
 
 subprojects {
-    apply plugin: 'java'
 
     repositories {
         mavenLocal()
         mavenCentral()
     }
 
-    dependencies {
-        //implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-        implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-        implementation "org.projectlombok:lombok:${lombokVersion}"
-        implementation "cn.hutool:hutool-all:${hutoolVersion}"
-        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-        annotationProcessor("io.quarkus:quarkus-panache-common:${quarkusPlatformVersion}")
-    }
     java {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    test {
-        systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    dependencies {
+        implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+
+        constraints {
+            implementation "org.projectlombok:lombok:${lombokVersion}"
+            implementation "cn.hutool:hutool-all:${hutoolVersion}"
+            annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+            annotationProcessor("io.quarkus:quarkus-panache-common:${quarkusPlatformVersion}")
+        }
     }
 
 }
+
+
+
+

@@ -1,10 +1,6 @@
-plugins {
-    id 'java'
-    id 'java-library'
-}
 
 dependencies {
-    api "org.projectlombok:lombok"
+    compileOnly "org.projectlombok:lombok"
     api 'cn.hutool:hutool-all'
     annotationProcessor 'org.projectlombok:lombok'
     api 'io.quarkus:quarkus-reactive-mysql-client'
