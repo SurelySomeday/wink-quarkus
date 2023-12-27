@@ -1,6 +1,10 @@
-apply plugin: 'java'
+plugins{
+    id "org.kordamp.gradle.jandex" version "${kordampJandexVersion}"
+}
 
 jar.enabled=false
+
+
 
 allprojects {
     apply plugin: 'java-library'
@@ -8,6 +12,7 @@ allprojects {
 
     group = 'top.yxlgx'
     version = '1.0-SNAPSHOT'
+
 }
 
 subprojects {

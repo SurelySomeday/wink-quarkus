@@ -28,6 +28,10 @@ public class Page<T> implements Serializable {
 
     }
 
+    public static <T> Page<T> of(Integer current, Integer size) {
+        return new Page<>(current, size);
+    }
+
     public Page(Integer current, Integer size) {
         this.current = current;
         this.size = size;

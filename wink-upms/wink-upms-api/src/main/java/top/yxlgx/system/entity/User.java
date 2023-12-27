@@ -1,12 +1,14 @@
 package top.yxlgx.system.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.quarkus.reactive.datasource.ReactiveDataSource;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import top.yxlgx.core.annotation.Password;
 import top.yxlgx.system.entity.base.BaseEntity;
 
 import java.io.Serializable;
@@ -49,6 +51,7 @@ import java.util.Set;
 @SQLDelete(sql = "update sys_user set deleted = 1 where user_id = ?")
 @Where(clause = "deleted = 0")
 @JsonIgnoreProperties("password")
+@ReactiveDataSource("secondary")
 public class User extends BaseEntity implements Serializable {
     @Id
     @Column(name = "user_id")
@@ -78,6 +81,7 @@ public class User extends BaseEntity implements Serializable {
      * 密码
      */
     @Comment("密码")
+    @Password
     private String password;
 
     /**

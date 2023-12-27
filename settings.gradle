@@ -21,4 +21,6 @@ include 'wink-upms:wink-upms-biz'
 findProject(':wink-upms:wink-upms-biz')?.name = 'wink-upms-biz'
 include 'wink-common:wink-common-core'
 findProject(':wink-common:wink-common-core')?.name = 'wink-common-core'
+include 'wink-common:wink-common-security'
+findProject(':wink-common:wink-common-security')?.name = 'wink-common-security'
 

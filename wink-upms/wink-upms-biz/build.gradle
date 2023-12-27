@@ -17,6 +17,7 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured'
     implementation(project(":wink-common:wink-common-orm"))
     implementation(project(":wink-common:wink-common-core"))
+    implementation(project(":wink-common:wink-common-security"))
     implementation(project(":wink-upms:wink-upms-api"))
 
 }

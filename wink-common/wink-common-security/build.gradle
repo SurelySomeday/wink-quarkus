@@ -5,8 +5,8 @@ plugins {
 dependencies {
     compileOnly "org.projectlombok:lombok"
     annotationProcessor 'org.projectlombok:lombok'
-    api 'io.quarkus:quarkus-reactive-mysql-client'
-    api 'io.quarkus:quarkus-hibernate-reactive-panache'
-    api 'jakarta.ws.rs:jakarta.ws.rs-api'
+    api 'io.quarkus:quarkus-smallrye-jwt-build'
+    api 'io.quarkus:quarkus-smallrye-jwt'
+    api 'io.quarkus:quarkus-elytron-security-common'
     api(project(":wink-common:wink-common-core"))
 }

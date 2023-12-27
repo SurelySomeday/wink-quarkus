@@ -15,6 +15,7 @@ import top.yxlgx.system.service.RoleService;
  * @description 角色管理
  */
 @Path("/role")
+@Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class RoleResource {
 

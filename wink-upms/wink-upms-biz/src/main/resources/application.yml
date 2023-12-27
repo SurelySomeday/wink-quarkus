@@ -2,12 +2,20 @@ greeting:
   message: "hello 22"
 
 quarkus:
+  smallrye-jwt:
+    enabled: true
   datasource:
     db-kind: mysql
     username: root
     password: 123456
     reactive:
       url: vertx-reactive:mysql://127.0.0.1:3307/demo?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    secondary:
+      db-kind: mysql
+      username: root
+      password: 123456
+      reactive:
+        url: vertx-reactive:mysql://127.0.0.1:3307/demo?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
   hibernate-orm:
     database:
       generation: update
@@ -15,3 +23,16 @@ quarkus:
       sql: true
     unsupported-properties:
       "hibernate.hbm2ddl.default_constraint_mode": NO_CONSTRAINT
+  http:
+    auth:
+      basic: false
+mp:
+  jwt:
+    verify:
+      publickey:
+        location: classpath:publicKey.pem
+smallrye:
+  jwt:
+    sign:
+      key:
+        location: classpath:privateKey.pem
